@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>菜单</title>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<style>
+		.pa-b-05{width:100px;}
+		
+		</style>
+	</head>
+	<body>
+	<div class="addImg">添加图片</div>
+		
+	<!--	<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+		<script type="text/javascript" src="jquery/jquery.min.js"></script>  -->
+<script type="text/javascript">
+Date.prototype.format = function(format){ 
+        var o = { 
+        "M+" : this.getMonth()+1, //month 
+        "d+" : this.getDate(), //day 
+        "h+" : this.getHours(), //hour 
+        "m+" : this.getMinutes(), //minute 
+        "s+" : this.getSeconds(), //second 
+        "q+" : Math.floor((this.getMonth()+3)/3), //quarter 
+        "S" : this.getMilliseconds() //millisecond 
+        } 
+
+        if(/(y+)/.test(format)) { 
+        format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); //$1、$2、...、$99与 regexp 中的第 1 到第 99 个子表达式相匹配的文本
+        } 
+
+        for(var k in o) { 
+        if(new RegExp("("+ k +")").test(format)) { 
+        format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length)); //o[k]长度可能为 1 2: 1显示"0"+o[k]，2直接显示o[k]
+        } 
+        } 
+        return format; 
+}
+
+var tt="2016-05-27 10:28:47";
+function formatDate(time,type){
+  if(type==undefined){
+     type='yyyy-MM-dd hh:mm:ss';
+  }
+  return new Date(time).format(type);
+}
+var t1=new Date(tt);
+console.log(t1);
+console.log(formatDate(t1));
+//console.log("tc:"+formatDate(tt));
+/*
+var url="http://127.0.0.1:7777/jzy/public/jzyWxManage/projectManger?type=2&page=1&pageNum=10&projectName=&projectStartTime=1970-01-01&projectEndTime=2222-01-01&projectStatus=1%2C2&companyId=1000&hotCityName=%E6%B7%B1%E5%9C%B3&roleFlag=1000";
+
+ $.ajax({
+             url : url,
+             type : "GET",
+             dataType : "json",
+			  async:false, 
+             success : function(data) {
+		//alert(data);
+		//alert(data["data"][0]["createTime"]);
+		var tt=data["data"][0]["createTime"];
+		//alert(no);
+		//tt=data["timestamp"];
+		//sig=data["signature"];
+		//alert(sig+"<br />"+tt+"<br />"+no);
+		console.log("time:"+tt);
+		var t1=formatDate(tt);
+		console.log(t1);
+             }
+		});
+*/
+</script>
+	</body>
+	
+</html>
